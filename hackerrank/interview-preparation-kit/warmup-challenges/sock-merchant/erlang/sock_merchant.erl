@@ -28,8 +28,8 @@ separate_socks(Next, Acc) ->
     end.
 
 %% Value: number
-filter_socks(Value, _) ->
-    if Value div 2 >= 1 -> true;
+filter_socks(_, Value) ->
+    if length(Value) div 2 >= 1 -> true;
        true -> false
     end.
 
@@ -55,6 +55,7 @@ sock_merchant(_, Ar) ->
 test_sock_merchant() ->
     3 = sock_merchant(9,
                       [10, 20, 20, 10, 10, 30, 50, 10, 20]),
+    4 = sock_merchant(10, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3]),
     pass.
 
 test() -> pass = test_sock_merchant().
