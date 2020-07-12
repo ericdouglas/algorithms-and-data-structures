@@ -28,7 +28,7 @@ separate_socks(Next, Acc) ->
     end.
 
 %% Value: number
-filter_socks(_, Value) ->
+filter_socks(Value, _) ->
     if Value div 2 >= 1 -> true;
        true -> false
     end.
@@ -42,13 +42,13 @@ count_number_of_pair_of_sockets({_, Arr}, Acc) ->
 %% Ar: [number]
 sock_merchant(_, Ar) ->
     % SocksSeparatedList = #{1: [1,1], 2: [2], ...}
-    SocksSeparatedList = lists:foldl(separate_socks,
+    SocksSeparatedList = lists:foldl(fun separate_socks/2,
                                      #{},
                                      Ar),
-    SocksWithPairs = maps:filter(filter_socks,
+    SocksWithPairs = maps:filter(fun filter_socks/2,
                                  SocksSeparatedList),
     ListOfSocksWithPairs = maps:to_list(SocksWithPairs),
-    lists:foldl(count_number_of_pair_of_sockets,
+    lists:foldl(fun count_number_of_pair_of_sockets/2,
                 0,
                 ListOfSocksWithPairs).
 
