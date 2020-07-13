@@ -1,0 +1,20 @@
+{
+  "name": "algorithms-and-data-structures",
+  "version": "1.0.0",
+  "description": "> 🤓 Studies on algorithms and data structures 💻",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericdouglas/algorithms-and-data-structures.git"
+  },
+  "keywords": [],
+  "author": "Eric Douglas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericdouglas/algorithms-and-data-structures/issues"
+  },
+  "homepage": "https://github.com/ericdouglas/algorithms-and-data-structures#readme"
+}
