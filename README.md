@@ -10,4 +10,4 @@
         - [JavaScript](hackerrank/interview-preparation-kit/warmup-challenges/sock-merchant/javascript/sock-merchant.js)
       - [Counting Valleys](https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
         - [Erlang](hackerrank/interview-preparation-kit/warmup-challenges/counting-valleys/erlang/counting_valleys.erl)
-        - [JavaScript]()
+        - [JavaScript](hackerrank/interview-preparation-kit/warmup-challenges/counting-valleys/javascript/counting-valleys.js)

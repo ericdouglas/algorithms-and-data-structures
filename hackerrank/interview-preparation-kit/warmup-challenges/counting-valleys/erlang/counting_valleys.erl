@@ -8,7 +8,8 @@ check_new_place(Current, NewPlace)
 check_new_place(Current, NewPlace)
     when Current == 0, NewPlace < 0 ->
     valley;
-check_new_place(_, _) -> nada_acontece_feijoada.
+check_new_place(_, _) ->
+    nada_acontece_feijoada. % obs: this atom is a joke
 
 %% N: number - number of steps
 %% S: string - all steps e.g UUDDUD
