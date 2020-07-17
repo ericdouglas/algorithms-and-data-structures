@@ -1,13 +1,19 @@
-# algorithms-and-data-structures
+![Word cloud about algorithm](https://i.imgur.com/LeFawxJ.jpg)
 
 > 🤓 Studies on algorithms and data structures 💻
 
-- **HackerRank**
-  - [Interview Preparation Kit](https://www.hackerrank.com/interview/interview-preparation-kit)
-    - [Warm-up Challenges](https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges)
-      - [Sock Merchant](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
-        - [Erlang](hackerrank/interview-preparation-kit/warmup-challenges/sock-merchant/erlang/sock_merchant.erl)
-        - [JavaScript](hackerrank/interview-preparation-kit/warmup-challenges/sock-merchant/javascript/sock-merchant.js)
-      - [Counting Valleys](https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
-        - [Erlang](hackerrank/interview-preparation-kit/warmup-challenges/counting-valleys/erlang/counting_valleys.erl)
-        - [JavaScript](hackerrank/interview-preparation-kit/warmup-challenges/counting-valleys/javascript/counting-valleys.js)
+- [HackerRank](#hackerrank)
+  - [Interview Preparation Kit](#interview-preparation-kit)
+    - [Warm-up Challenges](#warm-up-challenges)
+
+## HackerRank
+
+### [Interview Preparation Kit](https://www.hackerrank.com/interview/interview-preparation-kit)
+
+#### [Warm-up Challenges](https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges)
+
+| Challenge                                                                                                                                                                             |                                           JavaScript                                           |                                           Erlang                                           |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------: |
+| [Sock Merchant](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)                 |  [solution](hackerrank/interview-preparation-kit/warmup-challenges/sock-merchant/javascript)   |  [solution](hackerrank/interview-preparation-kit/warmup-challenges/sock-merchant/erlang)   |
+| [Counting Valleys](https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)           | [solution](hackerrank/interview-preparation-kit/warmup-challenges/counting-valleys/javascript) | [solution](hackerrank/interview-preparation-kit/warmup-challenges/counting-valleys/erlang) |
+| [Jumping on the Clouds](https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup) |                                          [solution]()                                          |                                        [solution]()                                        |
