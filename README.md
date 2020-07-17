@@ -2,6 +2,9 @@
 
 > 🤓 Studies on algorithms and data structures 💻
 
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
 - [HackerRank](#hackerrank)
   - [Interview Preparation Kit](#interview-preparation-kit)
     - [Warm-up Challenges](#warm-up-challenges)
