@@ -7,17 +7,6 @@ count_comparison(String, Acc) when String == 97 ->
     Acc + 1;
 count_comparison(_, Acc) -> Acc.
 
-% count_comparison(String, Acc) when String == 97 ->
-%     io:format("::: String "),
-%     erlang:display(String),
-%     io:format("::: Acc "),
-%     erlang:display(Acc + 1),
-%     Acc + 1;
-% count_comparison(El, Acc) ->
-%     io:format("::: El "),
-%     erlang:display(El),
-%     Acc.
-
 repeated_string(String, Size) ->
     CompleteStringTimes = Size div length(String),
     PartialStringSize = Size rem length(String),
@@ -27,10 +16,6 @@ repeated_string(String, Size) ->
                                          String),
     FullString = lists:concat(CompleteStringPart ++
                                   [PartialStringPart]),
-    io:format("::: PartialStringPart "),
-    erlang:display(PartialStringPart),
-    io:format("::: FullString "),
-    erlang:display(FullString),
     lists:foldl(fun count_comparison/2, 0, FullString).
 
 test_repeated_string() ->
