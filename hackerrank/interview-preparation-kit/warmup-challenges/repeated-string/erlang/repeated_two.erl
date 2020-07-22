@@ -2,13 +2,25 @@
 
 -export([test/0]).
 
-repeated_string(String, Size) when Size =< 0 -> String;
+count_pattern(String) ->
+    RegExp = "[a]",
+    case re:run(String, RegExp) of
+        {match, [{Captured, _}]} -> Captured;
+        nomatch -> String
+    end.
+
 repeated_string(String, Size) ->
-    repeated_string(String ++ String,
-                    Size - length(String) - 1).
+    CompleteStringTimes = Size div length(String),
+    PartialStringSize = Size rem length(String),
+    CompleteString = [string:copies(String, CompleteStringTimes)],
+    PartialString = string:substr(String, 1, PartialStringSize),
+    FullString = lists:concat(CompleteString ++ [PartialString]),
+    count_pattern(FullString).
 
 test_repeated_string() ->
-    "abab" = repeated_string("ab", 3),
+    2 = repeated_string("dia", 7),
+    7 = repeated_string("aba", 10),
+    % 10 = repeated_string("a", 10),
     pass.
 
 test() -> pass = test_repeated_string().
