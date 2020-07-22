@@ -2,7 +2,7 @@
 
 -export([test/0]).
 
-%% 97 == "a"
+%% 97 is the unicode for letter "a"
 count_comparison(String, Acc) when String == 97 ->
     Acc + 1;
 count_comparison(_, Acc) -> Acc.
@@ -10,12 +10,9 @@ count_comparison(_, Acc) -> Acc.
 repeated_string(String, Size) ->
     CompleteStringTimes = Size div length(String),
     PartialStringSize = Size rem length(String),
-    CompleteStringPart = [String
-                          || _ <- lists:seq(1, CompleteStringTimes)],
-    {PartialStringPart, _} = lists:split(PartialStringSize,
-                                         String),
-    FullString = lists:concat(CompleteStringPart ++
-                                  [PartialStringPart]),
+    CompleteString = [string:copies(String, CompleteStringTimes)],
+    PartialString = string:substr(String, 1, PartialStringSize),
+    FullString = lists:concat(CompleteString ++ [PartialString]),
     lists:foldl(fun count_comparison/2, 0, FullString).
 
 test_repeated_string() ->
