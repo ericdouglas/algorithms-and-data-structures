@@ -6,7 +6,7 @@ count_pattern(String) ->
     Pattern = "a",
     InitialCount = length(String),
     ReducedString = re:replace(String, Pattern, "", [global, {return, list}]),
-    (length(ReducedString) - InitialCount) * -1.
+    InitialCount - length(ReducedString).
 
 repeated_string("a", Size) -> Size;
 repeated_string(String, Size) ->
