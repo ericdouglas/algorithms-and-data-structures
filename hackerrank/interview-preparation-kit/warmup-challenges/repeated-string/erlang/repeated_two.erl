@@ -3,12 +3,12 @@
 -export([test/0]).
 
 count_pattern(String) ->
-    RegExp = "[a]",
-    case re:run(String, RegExp) of
-        {match, [{Captured, _}]} -> Captured;
-        nomatch -> String
-    end.
+    Pattern = "a",
+    InitialCount = length(String),
+    ReducedString = re:replace(String, Pattern, "", [global, {return, list}]),
+    (length(ReducedString) - InitialCount) * -1.
 
+repeated_string("a", Size) -> Size;
 repeated_string(String, Size) ->
     CompleteStringTimes = Size div length(String),
     PartialStringSize = Size rem length(String),
@@ -20,7 +20,7 @@ repeated_string(String, Size) ->
 test_repeated_string() ->
     2 = repeated_string("dia", 7),
     7 = repeated_string("aba", 10),
-    % 10 = repeated_string("a", 10),
+    10 = repeated_string("a", 10),
     pass.
 
 test() -> pass = test_repeated_string().
