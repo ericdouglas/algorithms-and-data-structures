@@ -10,7 +10,7 @@ const repeatNTimes = (str, size) => {
   return response
 }
 
-countPattern = (str, pattern) => {
+const countPattern = (str, pattern) => {
   const regex = new RegExp(pattern, 'g')
   const reducedString = str.replace(regex, '')
 
