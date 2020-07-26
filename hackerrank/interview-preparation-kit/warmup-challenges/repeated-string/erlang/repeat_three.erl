@@ -13,12 +13,12 @@ repeated_string(String, Size) ->
     PartialString = string:substr(String,
                                   1,
                                   PartialStringSize),
-    CountPatternInString =
+    PatternInStringQuantity =
         lists:foldl(fun count_comparison/2, 0, String),
-    CountPatternInPartialString =
+    PatternInPartialStringQuantity =
         lists:foldl(fun count_comparison/2, 0, PartialString),
-    CompleteStringTimes * CountPatternInString +
-        CountPatternInPartialString.
+    CompleteStringTimes * PatternInStringQuantity +
+        PatternInPartialStringQuantity.
 
 test_repeated_string() ->
     2 = repeated_string("dia", 7),
