@@ -66,7 +66,14 @@ test_create_pivot_list_with_index() ->
     Result = create_pivot_list_with_index(Input),
     pass.
 
+test_add_index_to_list_items() ->
+    Input = [5, 3, 5],
+    Result = [{1, 5}, {2, 3}, {3, 5}],
+    Result = add_index_to_list_items(Input),
+    pass.
+
 test() ->
     pass = test_hour_glass_sum(),
     pass = test_create_pivot_list(),
-    pass = test_create_pivot_list_with_index().
+    pass = test_create_pivot_list_with_index(),
+    pass = test_add_index_to_list_items().
