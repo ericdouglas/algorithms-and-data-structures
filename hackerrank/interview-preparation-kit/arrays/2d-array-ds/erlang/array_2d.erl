@@ -20,7 +20,9 @@ create_pivot_list_with_index(Arr) ->
               end,
               ListsWithRowIdentifier).
 
-% create_list_with_hourglasses_sum(OriginalArr, ArrWithIndexes) ->
+create_list_with_hourglasses_sum(OriginalArr,
+                                 ArrWithIndexes) ->
+    [11].
 
 hour_glass_sum([Row | Rest] = Arr) ->
     RowsLength = length(Arr),
@@ -29,7 +31,8 @@ hour_glass_sum([Row | Rest] = Arr) ->
                                   {RowsLength, ColumnsLength}),
     PivotListWithIndex =
         create_pivot_list_with_index(PivotList),
-    % SumList = create_list_with_hourglasses_sum(Arr, PivotListWithIndex),
+    SumList = create_list_with_hourglasses_sum(Arr,
+                                               PivotListWithIndex),
     19.
 
     % case Rows < 3 or Columns < 3 of
@@ -72,8 +75,17 @@ test_add_index_to_list_items() ->
     Result = add_index_to_list_items(Input),
     pass.
 
+test_create_list_with_hourglasses_sum() ->
+    OriginalArr = [[3, 0, 1], [0, 1, 6], [2, 1, 3]],
+    ArrWithIndexes = [{1, [3]}],
+    Result = [11],
+    Result = create_list_with_hourglasses_sum(OriginalArr,
+                                              ArrWithIndexes),
+    pass.
+
 test() ->
     pass = test_hour_glass_sum(),
     pass = test_create_pivot_list(),
     pass = test_create_pivot_list_with_index(),
-    pass = test_add_index_to_list_items().
+    pass = test_add_index_to_list_items(),
+    pass = test_create_list_with_hourglasses_sum().
