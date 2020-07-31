@@ -20,9 +20,36 @@ create_pivot_list_with_index(Arr) ->
               end,
               ListsWithRowIdentifier).
 
+sum_hourglasses({_RowIndex, PivotList}, OriginalArr,
+                HourGlassPattern) ->
+    lists:map(fun ({_ColumnIndex, _Pivot}) ->
+                      lists:foldl(fun ({RowShift, ColumnShift}, Acc) ->
+                                          Row = lists:nth(RowShift + 1,
+                                                          OriginalArr),
+                                          Item = lists:nth(ColumnShift + 1,
+                                                           Row),
+                                          Acc + Item
+                                  end,
+                                  0,
+                                  HourGlassPattern)
+              end,
+              PivotList).
+
 create_list_with_hourglasses_sum(OriginalArr,
                                  ArrWithIndexes) ->
-    [11].
+    % {RowShift, ColumnShift}
+    % {Row|Column}Shift: what we need to add to the pivot index to find the next value
+    HourGlassPattern = [{0, 0},
+                        {0, 1},
+                        {0, 2},
+                        {1, 1},
+                        {2, 0},
+                        {2, 1},
+                        {2, 2}],
+    lists:map(fun (Item) ->
+                      sum_hourglasses(Item, OriginalArr, HourGlassPattern)
+              end,
+              ArrWithIndexes).
 
 hour_glass_sum([Row | Rest] = Arr) ->
     RowsLength = length(Arr),
@@ -77,10 +104,28 @@ test_add_index_to_list_items() ->
 
 test_create_list_with_hourglasses_sum() ->
     OriginalArr = [[3, 0, 1], [0, 1, 6], [2, 1, 3]],
-    ArrWithIndexes = [{1, [3]}],
+    ArrWithIndexes = [{1, [{1, 3}]}],
     Result = [11],
     Result = create_list_with_hourglasses_sum(OriginalArr,
                                               ArrWithIndexes),
+    pass.
+
+test_sum_hourglasses() ->
+    % sum_hourglasses({RowIndex, PivotList}, OriginalArr, HourGlassPattern) -> [11].
+    RowIndex = 1,
+    PivotList = [{1, [{1, 3}]}],
+    OriginalArr = [[3, 0, 1], [0, 1, 6], [2, 1, 3]],
+    HourGlassPattern = [{0, 0},
+                        {0, 1},
+                        {0, 2},
+                        {1, 1},
+                        {2, 0},
+                        {2, 1},
+                        {2, 2}],
+    Result = [11],
+    Result = sum_hourglasses({RowIndex, PivotList},
+                             OriginalArr,
+                             HourGlassPattern),
     pass.
 
 test() ->
@@ -88,4 +133,5 @@ test() ->
     pass = test_create_pivot_list(),
     pass = test_create_pivot_list_with_index(),
     pass = test_add_index_to_list_items(),
-    pass = test_create_list_with_hourglasses_sum().
+    pass = test_create_list_with_hourglasses_sum(),
+    pass = test_sum_hourglasses().
