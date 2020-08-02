@@ -14,14 +14,15 @@ describe('2d array DS - hourglass', () => {
     expect(hourglass(matrix)).toBe(19)
   })
 
-  it('should return a list with all hourglasses summed - #createSumList', () => {
-    //     const matrix = [
-    //   [1, 2, 3, 4],
-    //   [2, 1, 0, 1],
-    //   [4, 1, 0, 5],
-    //   [7, 4, 2, 5],
-    // ]
-    // expect(createSumList([3, 3], matrix)).toEqual([[0, 0]])
+  it.only('should return a list with all hourglasses summed - #createSumList', () => {
+    const matrix = [
+      [1, 0, 3, 1],
+      [2, 0, 0, 1],
+      [0, 1, 0, 0],
+      [0, 1, 2, 0],
+    ]
+
+    expect(createSumList([4, 4], matrix)).toEqual([7, 6, 6, 5])
   })
 
   it('should return a list with pivots position - #createPivotList', () => {
