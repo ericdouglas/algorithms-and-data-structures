@@ -25,6 +25,6 @@
 
 #### [Arrays](https://www.hackerrank.com/interview/interview-preparation-kit/arrays/challenges)
 
-| Challenge                                                                                                                                                        | JavaScript |                                   Erlang                                   |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------: | :------------------------------------------------------------------------: |
-| [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays) |  solution  | [solution](hackerrank/interview-preparation-kit/arrays/2d-array-ds/erlang) |
+| Challenge                                                                                                                                                        |                                   JavaScript                                   |                                   Erlang                                   |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------: | :------------------------------------------------------------------------: |
+| [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays) | [solution](hackerrank/interview-preparation-kit/arrays/2d-array-ds/javascript) | [solution](hackerrank/interview-preparation-kit/arrays/2d-array-ds/erlang) |
