@@ -9,7 +9,9 @@ const createPivotList = (rows, columns) => {
       rowIndex,
       columnIndex,
     ])
-  }).flat()
+  }).reduce((acc, next) => acc.concat(next), [])
+  // Since HackerRank does not support .flat(), we need to use the .reduce() to flat the pivotList
+  // }).flat()
 
   return pivotList
 }
