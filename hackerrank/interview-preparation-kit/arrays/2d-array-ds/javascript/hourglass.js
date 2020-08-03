@@ -57,7 +57,7 @@ const verifyMatrixSize = list => {
  * @param {[[number]]} list - 2d matrix
  * @returns {number} max hourglass sum
  */
-const hourglass = list => {
+const hourglassSum = list => {
   const [rows, columns] = verifyMatrixSize(list)
   const sumList = createSumList(list)
   const maxValue = Math.max(...sumList)
@@ -65,4 +65,9 @@ const hourglass = list => {
   return maxValue
 }
 
-module.exports = { hourglass, verifyMatrixSize, createSumList, createPivotList }
+module.exports = {
+  hourglassSum,
+  verifyMatrixSize,
+  createSumList,
+  createPivotList,
+}

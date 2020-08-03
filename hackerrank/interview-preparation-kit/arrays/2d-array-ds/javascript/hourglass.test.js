@@ -1,4 +1,4 @@
-const { hourglass, createSumList, createPivotList } = require('./hourglass')
+const { hourglassSum, createSumList, createPivotList } = require('./hourglass')
 
 describe('2d array DS - hourglass', () => {
   it('should return the max hourglass sum value - #hourglass', () => {
@@ -11,7 +11,7 @@ describe('2d array DS - hourglass', () => {
       [0, 0, 1, 2, 4, 0],
     ]
 
-    expect(hourglass(matrix)).toBe(19)
+    expect(hourglassSum(matrix)).toBe(19)
   })
 
   it('should return a list with all hourglasses summed - #createSumList', () => {
