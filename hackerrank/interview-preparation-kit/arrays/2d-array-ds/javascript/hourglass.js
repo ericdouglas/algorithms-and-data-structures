@@ -1,3 +1,8 @@
+/**
+ * @param {number} rows
+ * @param {number} columns
+ * @returns {[[number, number]]} array with the position of all first element (pivot) of the hourglass
+ */
 const createPivotList = (rows, columns) => {
   const pivotList = Array.from(new Array(rows), (_, rowIndex) => {
     return Array.from(new Array(columns), (_, columnIndex) => [
@@ -9,6 +14,10 @@ const createPivotList = (rows, columns) => {
   return pivotList
 }
 
+/**
+ * @param {[[Number]]} list - 2d matrix
+ * @returns {[number]} array with all hourglasses sum values
+ */
 const createSumList = list => {
   const [rowsLength, columnsLength] = verifyMatrixSize(list)
   // Since the hourglass is a 3x3 matrix, we can not use a pivot that starts
@@ -33,6 +42,10 @@ const createSumList = list => {
   return result
 }
 
+/**
+ * @param {[[Number]]} list - 2d matrix
+ * @returns {[number, number]}
+ */
 const verifyMatrixSize = list => {
   const rows = list.length
   const columns = list[0].length
@@ -40,6 +53,10 @@ const verifyMatrixSize = list => {
   return [rows, columns]
 }
 
+/**
+ * @param {[[number]]} list - 2d matrix
+ * @returns {number} max hourglass sum
+ */
 const hourglass = list => {
   const [rows, columns] = verifyMatrixSize(list)
   const sumList = createSumList(list)
