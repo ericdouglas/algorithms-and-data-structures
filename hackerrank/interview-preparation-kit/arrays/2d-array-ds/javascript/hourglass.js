@@ -43,7 +43,9 @@ const verifyMatrixSize = list => {
 const hourglass = list => {
   const [rows, columns] = verifyMatrixSize(list)
   const sumList = createSumList(list)
-  return 19
+  const maxValue = Math.max(...sumList)
+
+  return maxValue
 }
 
 module.exports = { hourglass, verifyMatrixSize, createSumList, createPivotList }
