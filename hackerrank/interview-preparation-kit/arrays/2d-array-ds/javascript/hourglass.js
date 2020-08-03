@@ -16,6 +16,17 @@ const createPivotList = (rows, columns) => {
 
 /**
  * @param {[[Number]]} list - 2d matrix
+ * @returns {[number, number]}
+ */
+const verifyMatrixSize = list => {
+  const rows = list.length
+  const columns = list[0].length
+
+  return [rows, columns]
+}
+
+/**
+ * @param {[[Number]]} list - 2d matrix
  * @returns {[number]} array with all hourglasses sum values
  */
 const createSumList = list => {
@@ -43,22 +54,10 @@ const createSumList = list => {
 }
 
 /**
- * @param {[[Number]]} list - 2d matrix
- * @returns {[number, number]}
- */
-const verifyMatrixSize = list => {
-  const rows = list.length
-  const columns = list[0].length
-
-  return [rows, columns]
-}
-
-/**
  * @param {[[number]]} list - 2d matrix
  * @returns {number} max hourglass sum
  */
 const hourglassSum = list => {
-  const [rows, columns] = verifyMatrixSize(list)
   const sumList = createSumList(list)
   const maxValue = Math.max(...sumList)
 
