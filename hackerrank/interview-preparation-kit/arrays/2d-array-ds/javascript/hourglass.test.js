@@ -22,7 +22,7 @@ describe('2d array DS - hourglass', () => {
       [0, 1, 2, 0],
     ]
 
-    expect(createSumList([4, 4], matrix)).toEqual([7, 6, 6, 5])
+    expect(createSumList(matrix)).toEqual([7, 6, 6, 5])
   })
 
   it('should return a list with pivots position - #createPivotList', () => {
